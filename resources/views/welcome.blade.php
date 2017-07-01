@@ -12,7 +12,7 @@
 
     </head>
     <body>
-        <div id="app">
+        <div id="appWelcome">
             <ul>
                 <li v-for="skill in skills">@{{skill}}</li>
             </ul>
@@ -20,6 +20,6 @@
         <!-- Script -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/appWelcome.js"></script>
     </body>
 </html>

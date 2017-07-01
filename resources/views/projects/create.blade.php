@@ -14,7 +14,7 @@
             <div class="control">
                 <label for="name" class="label">Project Name:</label>
                 
-                <input type="text" id="name" name="name" class="input"> 
+                <input type="text" id="name" name="name" class="input" v-model="name"> 
 
                 <span class="help is-danger"></span>
             </div>
@@ -22,7 +22,7 @@
             <div class="control">
                 <label for="description" class="label">Project Description:</label>
                 
-                <input type="text" id="description" name="description" class="input">
+                <input type="text" id="description" name="description" class="input" v-model="description">
 
                 <span class="help is-danger"></span>
             </div>
@@ -35,6 +35,6 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
-    <script src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>

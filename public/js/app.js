@@ -1,17 +1,15 @@
-Vue.prototype.$http = axios
-
 new Vue({
-    
-    el:'#app',
-    
+    el: '#app',
+
     data: {
-        skills: []
+            name: '',
+            description: ''
     },
-    
-    mounted(){
-        this.$http.get('/skills')
-          .then(response =>
-            this.skills = response.data
-          );
+
+    methods: {
+        onSubmit() {
+            this.form.post('/projects')
+                .then(response => alert('Wahoo!'));
+        }
     }
 });
