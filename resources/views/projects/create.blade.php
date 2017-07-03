@@ -24,13 +24,13 @@
         	<hr>
         @endif
 
-        <form method="POST" action="/projects" @submit.prevent="onSubmit">
+        <form method="POST" action="/projects" @submit.prevent="onSubmit" @keydown="errorMsg.clear($event.target.name)">
             <div class="control">
                 <label for="name" class="label">Project Name:</label>
                 
                 <input type="text" id="name" name="name" class="input" v-model="name"> 
 
-                <span class="help is-danger" v-text="errorMsg.get('name')"></span>
+                <span class="help is-danger"  v-if="errorMsg.has('name')" v-text="errorMsg.get('name')"></span>
             </div>
 
             <div class="control">
@@ -38,7 +38,7 @@
                 
                 <input type="text" id="description" name="description" class="input" v-model="description">
 
-                <span class="help is-danger" v-text="errorMsg.get('description')"></span>
+                <span class="help is-danger" v-if="errorMsg.has('description')" v-text="errorMsg.get('description')"></span>
             </div>
 
             <div class="control">

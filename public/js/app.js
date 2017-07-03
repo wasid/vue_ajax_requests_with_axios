@@ -10,8 +10,16 @@ class Errors{
        } 
     }
     
+    has(field){
+       return this.errorMsg.hasOwnProperty(field)
+    }
+    
     record(response){
         this.errorMsg = response;
+    }
+    
+    clear(field){
+        delete this.errorMsg[field]
     }
     
 }
