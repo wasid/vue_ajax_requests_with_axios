@@ -9,11 +9,18 @@ class Errors{
            return this.errorMsg[field][0];
        } 
     }
-    
+
     has(field){
        return this.errorMsg.hasOwnProperty(field)
     }
     
+    any(){
+        
+        return Object.keys(this.errorMsg).length > 0;
+        
+    }
+    
+
     record(response){
         this.errorMsg = response;
     }
@@ -35,8 +42,15 @@ new Vue({
     methods: {
         onSubmit() {
             axios.post('/projects', this.$data)
-                .then(response => alert('Wahoo!'))
+                .then(this.onSuccess)
                 .catch(error => this.errorMsg.record(error.response.data));
+        },
+        
+        onSuccess(response){
+            alert(response.data.message);
+            
+            this.name = '';
+            this.description = '';
         }
     }
 });

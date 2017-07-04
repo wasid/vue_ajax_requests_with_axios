@@ -42,7 +42,7 @@
             </div>
 
             <div class="control">
-                <button class="button is-primary">Create</button>
+                <button class="button is-primary" :disabled="errorMsg.any()">Create</button>
             </div>
         </form>
     </div>
